@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - Event Management Site</title>
+    <link rel="stylesheet" href="create-event.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="event-container">
+        <div class="event-box">
+            <div class="logo">
+                <a href="index.html"><img src="Assets/Logo.png" alt="Logo"></a>
+            </div>
+            <h2>Create Your Event</h2>
+            <p class="subtitle">Fill in the details to create your perfect event</p>
+            
+            <form id="eventForm">
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span>Choose Event</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span>Event Details</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Choose Event Type -->
+                <div class="form-step active" id="step1">
+                    <h3>Select Event Type</h3>
+                    
+                    <div class="event-types">
+                        <label class="event-type-card">
+                            <input type="radio" name="eventType" value="conference" required>
+                            <div class="card-content">
+                                <i class="fas fa-users"></i>
+                                <h4>Conference</h4>
+                                <p>Professional gatherings and seminars</p>
+                            </div>
+                        </label>
+                        
+                        <label class="event-type-card">
+                            <input type="radio" name="eventType" value="wedding">
+                            <div class="card-content">
+                                <i class="fas fa-heart"></i>
+                                <h4>Wedding</h4>
+                                <p>Wedding ceremonies and receptions</p>
+                            </div>
+                        </label>
+                        
+                        <label class="event-type-card">
+                            <input type="radio" name="eventType" value="birthday">
+                            <div class="card-content">
+                                <i class="fas fa-birthday-cake"></i>
+                                <h4>Birthday Party</h4>
+                                <p>Birthday celebrations and parties</p>
+                            </div>
+                        </label>
+                        
+                        <label class="event-type-card">
+                            <input type="radio" name="eventType" value="corporate">
+                            <div class="card-content">
+                                <i class="fas fa-briefcase"></i>
+                                <h4>Corporate Event</h4>
+                                <p>Business meetings and corporate functions</p>
+                            </div>
+                        </label>
+                        
+                        <label class="event-type-card">
+                            <input type="radio" name="eventType" value="concert">
+                            <div class="card-content">
+                                <i class="fas fa-music"></i>
+                                <h4>Concert</h4>
+                                <p>Music events and live performances</p>
+                            </div>
+                        </label>
+                        
+                        <label class="event-type-card">
+                            <input type="radio" name="eventType" value="workshop">
+                            <div class="card-content">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <h4>Workshop</h4>
+                                <p>Training sessions and workshops</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <a href="index.html" class="btn btn-secondary">Cancel</a>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Event Details -->
+                <div class="form-step" id="step2">
+                    <h3>Event Details</h3>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="eventName">Event Name *</label>
+                            <input type="text" id="eventName" name="eventName" placeholder="Enter event name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row two-columns">
+                        <div class="input-group">
+                            <label for="eventDate">Event Date *</label>
+                            <input type="date" id="eventDate" name="eventDate" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="eventTime">Event Time *</label>
+                            <input type="time" id="eventTime" name="eventTime" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row two-columns">
+                        <div class="input-group">
+                            <label for="eventDuration">Duration (hours) *</label>
+                            <select id="eventDuration" name="eventDuration" required>
+                                <option value="">Select duration</option>
+                                <option value="1">1 Hour</option>
+                                <option value="2">2 Hours</option>
+                                <option value="3">3 Hours</option>
+                                <option value="4">4 Hours</option>
+                                <option value="5">5 Hours</option>
+                                <option value="6">6 Hours</option>
+                                <option value="8">8 Hours</option>
+                                <option value="12">12 Hours (Half Day)</option>
+                                <option value="24">24 Hours (Full Day)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="expectedGuests">Expected Guests *</label>
+                            <input type="number" id="expectedGuests" name="expectedGuests" placeholder="Number of guests" min="1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="eventVenue">Venue / Location *</label>
+                            <input type="text" id="eventVenue" name="eventVenue" placeholder="Enter venue or location" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="eventAddress">Full Address *</label>
+                            <textarea id="eventAddress" name="eventAddress" placeholder="Enter complete address" rows="2" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="eventDescription">Event Description</label>
+                            <textarea id="eventDescription" name="eventDescription" placeholder="Describe your event..." rows="4"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row two-columns">
+                        <div class="input-group">
+                            <label for="organizerName">Organizer Name *</label>
+                            <input type="text" id="organizerName" name="organizerName" placeholder="Your name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="organizerEmail">Organizer Email *</label>
+                            <input type="email" id="organizerEmail" name="organizerEmail" placeholder="Your email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="organizerPhone">Contact Phone *</label>
+                            <input type="tel" id="organizerPhone" name="organizerPhone" placeholder="Your phone number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="budget">Estimated Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-1000">Under $1,000</option>
+                                <option value="1000-5000">$1,000 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="10000-25000">$10,000 - $25,000</option>
+                                <option value="25000-50000">$25,000 - $50,000</option>
+                                <option value="over-50000">Over $50,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="catering">
+                                <span>Catering Services</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="photography">
+                                <span>Photography</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="decoration">
+                                <span>Decoration</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="music">
+                                <span>Music / DJ</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea id="specialRequests" name="specialRequests" placeholder="Any special requirements or requests..." rows="3"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="submit" class="btn btn-primary">Create Event <i class="fas fa-check"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Event Created Successfully!</h3>
+            <p>Your event has been submitted. We will contact you shortly.</p>
+            <div class="event-summary" id="eventSummary"></div>
+            <button class="btn btn-primary" onclick="closeModal()">Done</button>
+        </div>
+    </div>
+    
+    <script src="create-event.js"></script>
+</body>
+</html>
