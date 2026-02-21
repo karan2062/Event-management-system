@@ -113,5 +113,5 @@ function handleEnroll() {
 }
 
 function handleExploreEvents() {
-    window.location.href = 'event.html';
+    window.location.href = 'create-event.html';
 }

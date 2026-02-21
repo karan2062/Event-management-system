@@ -30,9 +30,9 @@
     <!-- Landing Page Section -->
     <section class="landing-page">
         <div class="landing-content">
-            <h1>Discover Amazing Events</h1>
+            <h1>Create Amazing Events</h1>
             <p>Join us for unforgettable experiences and memorable moments</p>
-            <button class="explore-btn">Explore Events</button>
+            <button class="explore-btn">Create Events</button>
         </div>
     </section>
 
@@ -41,7 +41,7 @@
         <div class="create-event-container">
             <h2>Create Your Event</h2>
             <p>Ready to organize your perfect event? Fill out our simple form to get started.</p>
-            <button class="enroll-btn" onclick="window.location.href='create-event.html'">Enroll Now</button>
+            <button class="enroll-btn" id="seeEventsBtn">See Events</button>
         </div>
     </section>
 
@@ -97,7 +97,7 @@
         
         // Handle Explore Events button
         document.querySelector('.explore-btn').addEventListener('click', function() {
-            document.querySelector('.create-event-section').scrollIntoView({ behavior: 'smooth' });
+            window.location.href = 'create-event.html';
         });
     </script>
 </body>
