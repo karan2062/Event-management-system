@@ -95,11 +95,11 @@ function scrollToTop() {
     });
 }
 function handleSignIn() {
-    window.location.href = 'signin.html';
+    window.location.href = 'signin.php';
 }
 
 function handleSignUp() {
-    window.location.href = 'signup.html';
+    window.location.href = 'signup.php';
 }
 function handleEnroll() {
     const adminSection = document.getElementById('enroll-admin');

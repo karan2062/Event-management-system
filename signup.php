@@ -15,8 +15,7 @@
             </div>
             <h2>Create Account</h2>
             <p class="subtitle">Join us and start managing your events</p>
-            
-            <form id="signupForm" onsubmit="handleSignUpSubmit(event)">
+            <form id="signupForm" action="signup_process.php" method="POST">
                 <div class="name-row">
                     <div class="input-group">
                         <i class="fas fa-user"></i>
@@ -27,52 +26,33 @@
                         <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
                     </div>
                 </div>
-                
                 <div class="input-group">
                     <i class="fas fa-envelope"></i>
                     <input type="email" id="email" name="email" placeholder="Email Address" required>
                 </div>
-                
                 <div class="input-group">
                     <i class="fas fa-phone"></i>
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                 </div>
-                
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" id="password" name="password" placeholder="Password" required minlength="8">
-                    <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
                 </div>
-                
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
-                    <i class="fas fa-eye toggle-password" onclick="togglePassword('confirmPassword')"></i>
                 </div>
-                
-                <div class="password-requirements">
-                    <p>Password must contain:</p>
-                    <ul>
-                        <li id="length"><i class="fas fa-circle"></i> At least 8 characters</li>
-                        <li id="uppercase"><i class="fas fa-circle"></i> One uppercase letter</li>
-                        <li id="number"><i class="fas fa-circle"></i> One number</li>
-                    </ul>
-                </div>
-                
                 <div class="terms">
                     <label>
                         <input type="checkbox" name="terms" required>
                         <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
                     </label>
                 </div>
-                
                 <button type="submit" class="signup-btn">Create Account</button>
             </form>
-            
             <div class="divider">
                 <span>or sign up with</span>
             </div>
-            
             <div class="social-login">
                 <button class="social-btn google">
                     <i class="fab fa-google"></i>
@@ -83,15 +63,12 @@
                     Facebook
                 </button>
             </div>
-            
             <p class="signin-link">
-                Already have an account? <a href="signin.html">Sign In</a>
+                Already have an account? <a href="signin.php">Sign In</a>
             </p>
-            
             <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
         </div>
     </div>
-    
-    <script src="signup.js"></script>
+    <!-- JavaScript removed for pure PHP form submission -->
 </body>
 </html>

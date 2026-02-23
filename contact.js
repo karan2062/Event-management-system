@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (signInBtn) {
         signInBtn.addEventListener('click', function() {
-            window.location.href = 'signin.html';
+            window.location.href = 'signin.php';
         });
     }
     
     if (signUpBtn) {
         signUpBtn.addEventListener('click', function() {
-            window.location.href = 'signup.html';
+            window.location.href = 'signup.php';
         });
     }
 });

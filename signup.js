@@ -240,7 +240,7 @@ function handleSignUpSubmit(event) {
         showSuccessMessage('Account Created Successfully! Redirecting to Sign In...');
         
         setTimeout(() => {
-            window.location.href = 'signin.html';
+            window.location.href = 'signin.php';
         }, 2000);
     }
 }

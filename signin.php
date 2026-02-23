@@ -16,7 +16,7 @@
             <h2>Welcome Back</h2>
             <p class="subtitle">Sign in to your account</p>
             
-            <form id="signinForm" onsubmit="handleSignInSubmit(event)">
+            <form id="signinForm" action="signin_process.php" method="POST">
                 <div class="input-group">
                     <i class="fas fa-envelope"></i>
                     <input type="email" id="email" name="email" placeholder="Email Address" required>
@@ -25,7 +25,6 @@
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" id="password" name="password" placeholder="Password" required>
-                    <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
                 </div>
                 
                 <div class="options">
@@ -55,13 +54,13 @@
             </div>
             
             <p class="signup-link">
-                Don't have an account? <a href="signup.html">Sign Up</a>
+                Don't have an account? <a href="signup.php">Sign Up</a>
             </p>
             
             <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
         </div>
     </div>
     
-    <script src="signin.js"></script>
+    <!-- JavaScript removed for pure PHP form submission -->
 </body>
 </html>
